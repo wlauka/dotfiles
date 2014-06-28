@@ -1,0 +1,11 @@
+# GITIGNORE : OSX, NODE.JS, SASS
+
+.ds_store
+
+node_modules
+logs
+*.log
+.grunt
+
+sass_cache
+*.sass_cache
