@@ -1,6 +1,18 @@
 set nocompatible
 filetype off
 
+let mapleader=","
+
+
+" ----------------- Colors
+set t_Co=256                                " enable 256 color mode
+set background=dark
+
+hi User1 ctermfg=10 ctermbg=6 cterm=bold   
+hi User2 ctermfg=15 ctermbg=60
+hi User3 ctermfg=235 ctermbg=60
+hi clear signColumn                         " set SignColumn to same color as BG
+
 " ----------------- Vundle
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -21,6 +33,7 @@ Plugin 'reedes/vim-colors-pencil'           " iaWriter inspired color scheme
 
 call vundle#end()
 filetype plugin indent on
+
 
 " ----------------- Main
 
@@ -45,8 +58,6 @@ set hlsearch					            " highlight search results
 set showmatch					            " show matching brackets
 set laststatus=2
 
-set t_Co=256                                " enable 256 color mode
-set background=dark
 set encoding=utf8
 set novisualbell
 set noerrorbells
@@ -61,15 +72,12 @@ map <space> /
 map <c-space> ?
 
 " ----------------- Status Line
-hi statusline ctermfg=60 ctermbg=15
-set statusline=%f                           " file name
+set statusline=%1*\ \ %f\ \ \ %2*                   " file name
+set statusline+=\ \ (%{fugitive#head(7)})\ \  
 set statusline+=%h                          "help file flag
 set statusline+=%m                          "modified flag
 set statusline+=%r                          "read only flag
-set statusline+=%{fugitive#statusline()}
 set statusline+=\ %=                        " align left
-set statusline+=Line:%l/%L[%p%%]            " line X of Y [percent of file]
-set statusline+=\ Col:%c                    " current column
-set statusline+=\ Buf:%n                    " Buffer number
-set statusline+=\ [%b][0x%B]\               " ASCII and byte code under cursor
-
+set statusline+=%3*L%2*\ %l/%L                       " line X of Y [percent of file]
+set statusline+=\ \ \ %3*C%2*\ %c                " current column
+set statusline+=\ \ \ %3*B%2*\ %n\ \                 " Buffer number
