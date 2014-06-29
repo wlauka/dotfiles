@@ -46,6 +46,7 @@ set expandtab
 
 
 set showmode
+set showcmd
 set ruler
 set autoread					            " watch for file changes
 set number						            " line numbers
@@ -56,6 +57,7 @@ set backspace=indent,eol,start
 set ffs=unix,mac,dos
 set laststatus=2
 set foldcolumn=3
+set scrolloff=4
 
 set ignorecase					            " ignore case in search
 set hlsearch					            " highlight search results

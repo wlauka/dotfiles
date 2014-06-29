@@ -1,11 +1,15 @@
 # GITIGNORE : OSX, NODE.JS, SASS
 
-.ds_store
+.DS_Store
+._*
+Thumbs.db
+.Spotlight-V100
+.Trashes
 
 node_modules
 logs
 *.log
 .grunt
 
-sass_cache
-*.sass_cache
+sass-cache
+*.sass-cache
