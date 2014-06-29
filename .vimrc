@@ -66,10 +66,16 @@ set nobackup
 set nowb
 set noswapfile
 
+
 " ----------------- Mappings
 
 map <space> /
 map <c-space> ?
+
+nmap <C-c> :.w !pbcopy<CR><CR>
+vmap <C-c> :w !pbcopy<CR><CR>
+
+
 
 " ----------------- Status Line
 set statusline=%1*\ \ %f\ \ \ %2*                   " file name
