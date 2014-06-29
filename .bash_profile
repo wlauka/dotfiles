@@ -1,7 +1,7 @@
+source ~/.dotfiles/.git-completion.bash
 source ~/.dotfiles/.git-prompt.sh
 
-
-export PS1="\[\e[36;1m\]\u\[\e[0m\]\[\e[32m\]@\h\[\e[36m\]\w$(__git_ps1 " (%s)") \[\e[33m\]\$ \[\e[0m\]"
+export PS1="\[\e[37m\]\u@\h\[\e[32m\]$(__git_ps1 " (%s)") \[\e[36m\]\w\[\e[33m\]: \[\e[0m\]"
 
 export PATH=/usr/local/share/npm/bin:$PATH              # add node to $PATH
 export PATH=$HOME/bin:$PATH                             # add home dir to $PATH
