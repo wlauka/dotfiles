@@ -1,20 +1,28 @@
-# Set prompt: "username@hostname/directory/tree $ " (with colors)
-export PS1="\[\e[32;1m\]\u\[\e[0m\]\[\e[32m\]@\h\[\e[36m\]\w \[\e[33m\]\$ \[\e[0m\]"
+source ~/.dotfiles/.git-prompt.sh
 
-export CLICOLOR=1;
-export LSCOLORS=exfxcxdxbxegedabagacad;
 
-export EDITOR=vim
+export PS1="\[\e[36;1m\]\u\[\e[0m\]\[\e[32m\]@\h\[\e[36m\]\w$(__git_ps1 " (%s)") \[\e[33m\]\$ \[\e[0m\]"
 
 export PATH=/usr/local/share/npm/bin:$PATH              # add node to $PATH
 export PATH=$HOME/bin:$PATH                             # add home dir to $PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH        # add macports to $PATH
 
+export TERM=xterm-256color
+export CLICOLOR=1
+export LSCOLORS=exfxcxdxbxegedabagacad
+export LSOPTIONS='--color=auto'
+export EDITOR=vim
 
 alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
+alias ll='ls -lah'
+alias ls='ls -Gfh'
 
-runPythonServer(){
+
+function runPythonServer(){                             # spin up HTTP Server
     python -m SimpleHTTPServer $1
 }
-alias server=runPythonServer                            # spin up HTTP Server
+alias server=runPythonServer                           
 
+function tabname {                                      # name OSX Terminal tabs
+    printf "\e]1;$1\a"
+}
