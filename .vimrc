@@ -12,6 +12,8 @@ hi User1 ctermfg=10 ctermbg=6 cterm=bold
 hi User2 ctermfg=15 ctermbg=60
 hi User3 ctermfg=235 ctermbg=60
 hi clear signColumn                         " set SignColumn to same color as BG
+hi clear foldColumn
+hi Folded ctermfg=60 ctermbg=NONE
 
 " ----------------- Vundle
 
@@ -52,11 +54,12 @@ set lazyredraw
 set history=200
 set backspace=indent,eol,start
 set ffs=unix,mac,dos
+set laststatus=2
+set foldcolumn=3
 
 set ignorecase					            " ignore case in search
 set hlsearch					            " highlight search results
 set showmatch					            " show matching brackets
-set laststatus=2
 
 set encoding=utf8
 set novisualbell
